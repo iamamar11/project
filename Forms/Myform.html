@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="MyDemo.html" method="POST">
+        <fieldset id="section1">
+            <legend>Personal information</legend>
+            <label for="firstname">First Name : </label>
+            <input type="text" name="FirstName" placeholder="Write your first name" required id="firstname"><br>
+
+            <label for="lastname">Last Name :</label>
+            <input type="text" name="LastName" placeholder="Write your last name" required id="lastname"><br>
+
+            <label for="password">Password :</label>
+            
+            <input type="password" name="password" id="password" placeholder="Current Password here" required>
+            
+            <label for="Gender">Gender :</label>
+            <input type="radio" id="genderMale" name="gender" value="male" checked>MALE
+            <input type="radio" id="genderFemale" name="gender" value="female">FEMALE<br>
+    </fieldset>
+    <fieldset id="section2">
+        <legend>Favorite</legend>
+            <label for="color">Your favorite color :</label>
+            <input type="color" name="color" id="color"><br>
+
+            <label for="genre">Your favorite genre :</label>
+            <select id="genre">
+                <option value="Rock">Rock</option>
+                <option value="folk">Folk</option>
+                <option value="pop">Pop</option>
+                <option value="electro">Electo</option>
+            </select><br>
+
+            <label for="level">Choose your level :</label><br>
+            <input type="radio" name="floor" id="r1" checked>Floor 1<br>
+            <input type="radio" name="floor" id="r2">Floor 2<br>
+            <input type="radio" name="floor" id="r3">Floor 3<br>
+
+            <label for="sport">Choose your favourite sport :</label><br>
+            <input type="checkbox">Cricket<br>
+            <input type="checkbox">Rugby<br>
+            <input type="checkbox">Football<br>
+            <input type="checkbox">Icehockey<br>
+    </fieldset>
+    <fieldset id="section3">
+        <legend>Comment</legend>
+        <label for="comment"></label>
+        <textarea name="commentSection" id="comment" cols="30" rows="10" placeholder="Please write your comment here."></textarea>
+    </fieldset>
+
+	
+    <input type="submit" value="SUBMIT" id="submit">
+</form>
+
+</body>
+    
+</html>

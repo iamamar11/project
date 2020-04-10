@@ -1,0 +1,46 @@
+div{
+    height: 100vh;
+    width:100vw;
+    background-image: url(hoop.png);
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: bottom left;
+    
+}
+.ball{ 
+    height: 100px;
+    width:100px;
+    background-color: red;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    border-radius:50%;
+    animation: basket 2s linear infinite ;
+}
+@keyframes basket {
+    0%{
+        transform: translate(-100px, -200px);
+        background-color:blue
+    }
+    20%{
+        transform: translate(-200px, -300px);
+        background-color: green;
+    }
+    40%{
+        transform: translate(-400px, -350px);
+        background-color: yellow;
+    }
+    60%{
+        transform: translate(-650px, -350px);
+        background-color: pink;
+    }
+    80%{
+        transform: translate(-950px, -200px);
+        background-color: coral;
+    }
+    100%{
+        transform: translate(-1100px, -100px);
+        background-color: coral;
+        
+    }
+}

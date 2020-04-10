@@ -1,0 +1,42 @@
+
+body{
+    background: yellow;
+}
+.container{
+    height: 740px;
+    width: 1400px;
+    margin: 10px;
+    background: lightblue;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.div1{
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    background: red;
+}
+.div2{
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    background: green;
+}
+.div3{
+    height: 50px;
+    width: 150px;
+    margin: 15px;
+    background: blue;
+    color: white;
+    flex: 1 2 auto;
+}
+.div4{
+    height: 50px;
+    width: 150px;
+    margin: 15px;
+    background: black;
+    color: white;
+    flex: 2 0 auto;
+}

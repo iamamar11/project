@@ -1,0 +1,11 @@
+body{
+    background-image: url(../Variable/images/glacier.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+@media only screen and (max-width : 900px){
+    body{
+        background-image: url(https://cdn.pixabay.com/photo/2013/08/06/19/13/plane-170272_1280.jpg);
+    }
+}

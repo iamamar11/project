@@ -1,0 +1,47 @@
+#ProfilePhoto
+{
+    float: right; 
+    height: 100px; 
+    width: 100px; 
+    border: 3px solid black;
+    margin-top: 6px;
+    margin-right: 6px;
+}
+table,td,th
+{
+    border: 2px solid orange;
+    color: white;
+    font-family: 'Lobster', cursive;
+
+}
+.Main
+{
+    background-color: orange;
+}
+a
+{
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration: none;
+    text-shadow: 1px 1px black;
+    text-transform: uppercase;
+    
+}
+body
+{
+    background-color: black;
+}
+
+h2
+{
+    text-shadow: 2px 2px blue;
+    color: white;
+    font-family: 'Righteous', cursive;
+}
+li,h1
+{
+    color: white;
+    font-family: 'Lobster', cursive;
+
+}
