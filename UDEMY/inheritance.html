@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <script>
+        // making a constructor or inheritance 
+
+        function User(name, id, age, gender){
+            this.name = name;
+            this.id = id;
+            this.age = age;
+            this.gender = gender;
+        };
+
+        let user1 = new User("Amarjit", 3506, 24, 'M');
+
+        // Adding Method to prototype
+        User.prototype.display = function(){
+            console.log(this.name+" is "+this.age+" years old.");
+        }
+        console.log(user1);        
+        user1.display();
+
+        function Admin(name, id, age, gender, auth){
+            User.call(this, name, id, age, gender);
+            this.auth = auth;
+        }
+        // creating a prototype chain for inheritingg the methos of parent prototype
+        Admin.prototype = Object.create(User.prototype);
+        Admin.prototype.constructor = Admin;
+
+        // Creating extra methods for the admin only
+        Admin.prototype.isAth = function(){
+            console.log(this.auth);
+        };
+        let admin1 = new Admin("Jassraj", 0002, 1,"M", true);
+        console.log(admin1);
+        admin1.display();
+        admin1.isAth();
+        // user1.isAth();
+    </script>
+</body>
+</html>

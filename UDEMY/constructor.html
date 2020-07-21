@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        function Person(name, age, gender)
+        {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        Person.prototype.language = "ENGLISH";
+        console.log(Person);
+        let Amarjit = new Person("Amarjit",25,"MALE");
+        
+        // can add method like we do in object
+        Amarjit.display = function() {
+            return Amarjit.name+ " is "+Amarjit.age+" years old";
+        }
+        // Amarjit.language = "Punjabi";
+
+        let Kiran = new Person("Kiranjot", 23, "Female");
+        console.log(Amarjit.display());
+        console.log(Amarjit);
+        console.log(Kiran);
+
+        let obj = "";
+        for(let [key,values] of Object.entries(Amarjit)){
+            obj += key+" : "+values+" <br>";
+        }
+        document.write(obj);
+    </script>
+</body>
+</html>

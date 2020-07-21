@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Average(game1, game2, game3){
+            let avg = (game1+game2+game3)/3;
+            return avg;
+        }
+        let JohnTeam = Average(89,120,103);
+        let MikeTeam = Average(116,94,123);
+        document.write("John Team AVG : "+JohnTeam+"<br>"+"Mike Team AVG : "+MikeTeam+"<br>");
+
+        // let Winner = JohnTeam > MikeTeam ? "John Team Won & score is : "+JohnTeam : "Mike's Team Won & score is : "+MikeTeam;
+        let Winner = JohnTeam > MikeTeam ? "John Team Won & score is : "+JohnTeam :  //if
+        MikeTeam > JohnTeam ? "Mike's Team Won & score is : "+MikeTeam : "It was a draw"; //else if
+        document.write(Winner);
+    </script>
+</body>
+</html>

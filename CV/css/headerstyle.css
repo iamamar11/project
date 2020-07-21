@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --navColor : #333333;
+}
+header{
+    background-color:orange;
+    /* background-image: linear-gradient(to left, #766dff, #88f3ff); */
+    height: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px,1fr));
+    place-items: center; 
+}
+.switch{
+    justify-self: end;
+    margin-right: 20px;
+}
+.theme{
+    background-color: gray;
+    /* color: wheat; */
+    color: black;
+}
+.night{
+    color: white;
+}
+input[type="checkbox"] {
+    background-color: brown;
+    color: cornflowerblue;
+}
+.navigation{
+    background-color: var(--navColor);
+    position: sticky;;
+    top: 0;
+    z-index: 1;
+    padding: 0px 15px;
+    transition: .5s ease;
+}
+nav{
+    display: grid;
+    grid-template-columns: 2% repeat(2, minmax(50px, 1fr)) 15%;
+    height: 55px;
+    width: 100%;
+    color: white;
+    background-color: var(--navColor);
+    transition: .5s ease;
+}
+
+.logoSection{
+    display: flex;
+    align-items: center;
+    grid-column: 2/3;
+}
+#logoimg{
+    height: 30px;
+}
+.nav-List{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(50px, 1fr));
+    place-items: center;
+    list-style: none;
+    height: 55px;
+    font-size: 80%;
+
+}
+.nav-List a{
+    text-decoration: none;
+    color: white;
+    
+}
+.nav-Link{
+    padding-top: 20px;
+    place-self: stretch;
+    text-align: center;
+    /* background-color: rgb(250, 101, 101); */
+}
+
+/* ! styling the content of the dropdown link */
+.dropdown-List{
+    list-style: none;
+    position: absolute;
+    /* padding: 20px 0px; */
+}
+.dropdown-Link{
+    display: block;
+    background-color: var(--navColor);
+    width: 100%;
+    text-align: justify;
+    padding: 9px;
+    display: none;
+    border: 1px solid white;
+    transform: translateY(20px);
+}
+.dropdown-Link:hover, .nav-Link:hover, .nested-dropdown-Link:hover{
+    background-color: red;
+    transition: .5s ease;
+}
+.droplist:hover .dropdown-Link{
+    display: block;
+    animation: drop .5s ease;
+}
+.dropdown-Link:hover .nested-dropdown-Link{
+    display: block;    
+    animation: slide .7s ease;
+}
+/* ! nested linked inside the dropdown unordered list */
+.nested-dropdown-List{
+    list-style: none;
+    position: absolute;
+    /* padding: 0px 0px 0px 113px; */
+    /* padding: 0px 197px; */
+    margin-top: -26px;
+}
+.nested-dropdown-Link{
+    display: block;
+    background-color: var(--navColor);
+    width: 100%;
+    padding: 9px;
+    display: none;
+    border: 1px solid white;
+    transform: translateX(93px);
+}
+
+/*! Animation to display the list */
+@keyframes drop{
+    0%{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+        transform: translateX(70px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(93px);
+    }
+}

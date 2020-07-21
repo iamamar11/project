@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let umbrella = {
+        //     color: "pink",
+        //     isOpen: false,
+        //     open: function(){
+        //         if(this.isOpen){
+        //             console.log("umbrella is Close");
+        //             }else{
+        //             this.isOpen = true;
+        //             console.log("ubmrella is open");
+        //             }
+        //         },
+        //     close: function(){
+        //         if(this.isOpen){
+        //             this.isOpen = false;
+        //         }else{
+        //             console.log("Umbrella is close");
+        //         }
+        //     }
+        // }
+        // console.log(umbrella.color);
+
+        // let breakfast = function(name,cost,ingredient){
+        //     this.name = name;
+        //     this.cost = cost;
+        //     this.ingredient = ingredient;
+        // };
+        // let item = new breakfast("Lumberjack",9.96,['eggs','sausage','toast','hashbrown','pancake']);
+        // let ing = '';
+        // console.log(typeof(item.cost));
+
+        // for(let values of Object.values(item.ingredient)){
+        //     ing += values+", ";
+        // }
+        // console.log(ing);
+        
+           let facebookProfile = function(name,friends,message){
+                this.name = name;
+                this.friends = friends;
+                this.message = message;
+            }
+            
+            // console.log(facebookProfile);
+            let user1 = new facebookProfile("Amarjit",100,["Hello","how are you"]);
+            let user2 = new facebookProfile("pargol",300,["hey",'hello']);
+
+            facebookProfile.prototype.postMessage = function(message){
+                // return this.message += message;
+                return this.message.push(message);
+            };
+            facebookProfile.prototype.deleteMessage = function(index){
+                return this.message.pop(index);
+            };
+            facebookProfile.prototype.addFriend = function(){
+                return this.friends += 1 ;
+            }
+            facebookProfile.prototype.removeFriend = function(){
+                return this.friends -= 1;
+            }
+            console.log(user1);
+            console.log(user2);
+
+
+            
+            // let item = {
+            //     name: "donut",
+            //     aval: [
+            //         {type: "jelly", cost: 1.22},
+            //         {type: "chocolate", cost: 2.45},
+            //         {type: "cider", cost: 1.59},
+            //         {type: "Boston Cream", cost: 5.99},
+                    
+            //     ]
+            // };
+            // // console.log(item.aval);
+            // for (let value of Object.values(item.aval)) {
+            //     console.log(value.type+' '+item.name+' cost '+value.cost+' each');
+
+            // }
+    </script>
+</body>
+</html>

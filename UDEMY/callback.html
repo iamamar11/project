@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        function GetFullAge(arr, callback){
+            let result = [];
+            arr.forEach(element => {
+                result.push(callback(element));
+            });
+            return result;
+        }
+
+        function CalcAge(elem){
+            return 2020 - elem;
+        }
+        
+        function fullAge(el){
+            return el > 18;
+        }
+
+        let array = [1995,1997,2002,1960,2014];
+        let results = GetFullAge(array, CalcAge);
+        let ages = GetFullAge(results, fullAge);
+        console.log(results);
+        console.log(ages);
+        
+
+        // function check(arr1){
+        //     let ress = arr1.filter((item) => {
+        //         return item > 18;
+        //     })
+        //     console.log(ress)
+        // }
+        // console.log(check(results));
+    </script>
+</body>
+</html>

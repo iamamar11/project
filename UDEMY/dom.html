@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="container">
+        <h3>hello</h3>
+    </button>
+    <script>
+        let parent = document.querySelector('.container');
+        let att = document.createAttribute('id');
+        // att.value = 'containerID';
+        parent.setAttribute('id', 'containerID');
+        parent.addEventListener('click',() => {
+            console.log(document.activeElement.tagName);
+            console.log(document.baseURI);
+        });
+
+        let inp = document.createElement('input');
+        inp.value = "this is an input feild";
+        parent.appendChild(inp);
+        
+    </script>
+</body>
+</html>

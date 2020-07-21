@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        array = [45,5,6,32,4]
+        display = (array) => {
+            array.forEach(element => {
+                document.write(element);
+            });
+        }
+        let eacharray = array.forEach((element,ind,array) => {
+            console.log(element+' '+ind+ ' - '+array);
+            return element;
+        });
+        console.log(array);
+        console.log(eacharray);
+        
+        function display(arr){
+            arr.forEach(function(element) {
+                document.write(element);
+            });
+        }
+        display([1,2,3,4,5,6,7,8,9]);
+        
+        let maparray = array.map((item,index,array) => {
+            item *= 10;
+            /**
+            * ! if tried to return value > 18 it will return true or false value instead of returning the exact numbers
+            * */
+            return item;
+        })
+        console.log("Maps method to iterate over an array and store values are a new array : "+maparray);
+        // console.log(array);
+
+        let eligble = array.filter((item) => {
+            item *= 10;
+            return item > 100;
+        })
+        console.log("filter method  : "+eligble);
+        // console.log(array);
+
+        /** 
+         * ! reduce() function is used to find the sum of the array
+         */
+        let a = 5000;
+        let sum = array.reduce((previous, current) => {
+            return previous += current;
+        },a);
+        console.log("reduce method : "+sum);
+
+        let everymethod = array.every((item, index) => {
+            // console.log(index);
+            return item > 0 ;
+        });            
+        console.log("every method : "+everymethod);
+
+        let somemethod = array.some((item) => {
+            return item > 20;
+        });
+        console.log("some Method : "+somemethod);
+
+        var numbers = [4,9,16,25,29];
+        let findmethod = numbers.find((item, index) => {
+            return item > 25;
+        })
+        console.log(findmethod);
+    
+        let findIndexmethod = numbers.findIndex((item, index) => {
+            return item > 18;
+        })
+        console.log(findIndexmethod);
+        
+    </script>
+</body>
+</html>

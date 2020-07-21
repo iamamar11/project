@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code challange</title>
+</head>
+<body>
+    <script>
+    let tip = [];
+    let bills = [];
+    let percent;
+    let result;
+    let totalbill;
+    bill = (array) => {
+        array.forEach(element => {
+           if(element <= 50 ){
+                percent = .20;
+                result = calculateTip(percent,element);
+                totalbill = calculateBill(result,element);
+                // document.write("Bill Before Tip : "+element+"<br>"+"Total Bill is : "+totalbill+"<br>"+"Totol Tip is : "+result);
+           }else if(element > 50 && element <= 200){
+                percent = .15;
+                result = calculateTip(percent,element);
+                totalbill = calculateBill(result,element);
+                // document.write("<br>Bill Before Tip : "+element+"<br>"+"Total Bill is : "+totalbill+"<br>"+"Totol Tip is : "+result);
+           }else{
+                percent = .10;
+                result = calculateTip(percent,element);
+                totalbill = calculateBill(result,element);
+                
+                // document.write("<br>Bill Before Tip : "+element+"<br>"+"Total Bill is : "+totalbill+"<br>"+"Totol Tip is : "+result);
+           }
+        });
+        display(tip,bills);
+    }
+    
+    calculateBill = (tp,bl) =>{
+        let sum = parseFloat(tp)+ parseFloat(bl);
+        bills.push(sum);
+        return sum;
+    }
+    
+    // calculating the total tip paid in array
+    calculateTip = (per, element) => {
+        let totalTip = (per*element).toPrecision(8);
+        tip.push(totalTip);
+        // document.write("Tip array values : "+tip+"<br>");
+        return totalTip;
+    }
+    display = (tip,bills) =>{
+        tip.forEach(element => {
+           document.write("Tip : "+element+"<br>"); 
+        });
+        bills.forEach(element => {
+            document.write("Final Bills : "+element+"<br>");
+        });
+    }
+    bill([48,124,268]);
+    </script>
+</body>
+</html>

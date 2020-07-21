@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function Borrowing</title>
+</head>
+<body>
+    <div class="hello">hey there</div>
+    <div class="hello">hey there</div>
+    <div class="hello">hey there</div>
+    <div class="hello">hey there</div>
+    <div class="hello">hey there</div>
+    <script>
+        // function calc(arr, fun){
+        //     let array = [];
+        //     arr.forEach(element => {
+        //         array.push(fun(element));
+        //     });
+        //     console.log(array);
+        // }
+        // // to check age i can pass the current year. but here i am binding it with the function
+        // function getAge(limit, el){
+        //     return limit - el;
+        // }
+        
+        // let age = 2020;
+        // let amar = { 
+        //     name: "Amarjit",
+        //     age : 25,
+        //     display(){
+        //         console.log(this.name, this.age);
+        //     }
+        // };
+        // calc([1995,2002,1865,1967,1988], getAge.bind(this,age));
+        
+        // console.log(amar);
+        // amar.display();
+
+        // let Kiran = {
+        //     name: "kiran",
+        //     age: 22
+        // }
+        // console.log(Kiran);
+        // // amar.display.call(Kiran);  
+        // let bindcall = amar.display.bind(Kiran);  
+        // bindcall();    
+        
+        let presentYear = 2020;
+        let amar = {
+            name: "amarjit",
+            birthyear : 1995,
+            display: function(year){
+            console.log(this.name+" your age is : "+(year -this.birthyear));
+            }
+        }
+        let kiran={
+            name: "kiran",
+            birthyear : 1997
+        }
+        
+        amar.display.call(kiran,presentYear);
+        let bound = amar.display.bind(amar);
+        console.dir(bound(presentYear));
+        
+        let hello = document.querySelectorAll('.hello');
+        console.log(hello);
+
+        let newarr = Array.prototype.slice.bind(hello);
+        console.dir(newarr);
+        console.log(newarr());
+
+        let name = "AMAR";
+        // ! random testing function fi
+        function display(name){
+            amar.display.call(kiran, presentYear);
+            console.log(name)
+
+        }
+        display(name);
+        
+    </script>
+</body>
+</html>

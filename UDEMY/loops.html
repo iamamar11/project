@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h2>loops</h2>
+    
+    <script>
+        let John = {
+            name: 'John',
+            Bills: [124,48,268,180,42]
+        }
+        let percent, totalTip, totalbill;
+        let Tips = [];
+        let FinalBill = [];
+
+        bill = (billArray) => {
+            billArray.forEach(element => {
+                // console.log(element);
+                if(element <= 50){
+                    percent = .20;
+                    // totalTip = CalcTip(percent, element); 
+                    // totalbill = Amount(totalTip, element);
+                    // document.write("<br>Tip : "+totalTip+"<br> Amount : "+totalbill+"<br>");
+                    // document.write(element+" is Less than 50 <br>");
+                }else if(element > 50 && element <= 200){
+                    percent = .15;
+                    // totalTip = CalcTip(percent, element); 
+                    // totalbill = Amount(totalTip, element);
+                    // document.write("<br>Tip : "+totalTip+"<br> Amount : "+totalbill+"<br>");
+                    // document.write(element + " is greater than 50 and less than 200<br>");
+                }else if(element > 200){
+                    percent = .10;
+                    // totalTip = CalcTip(percent, element); 
+                    // totalbill = Amount(totalTip, element);
+                    // document.write("<br>Tip : "+totalTip+"<br> Amount : "+totalbill+"<br>");
+                    // document.write(element + " is greater than 200<br>");
+                }
+                totalTip = CalcTip(percent, element); 
+                totalbill = Amount(totalTip, element);
+            });
+        }
+
+        // calculate tip
+        CalcTip = (per, value) => {
+            let tip = (per*value).toPrecision(8);
+            Tips.push(tip);
+            return tip;
+        }
+        Amount = (tps , bls) =>{
+            let sum = parseFloat(tps)+ parseFloat(bls);
+            FinalBill.push(sum);
+            return sum;
+        }
+
+        bill(John.Bills);
+        document.write("<br>Tips : "+Tips+"<br>");
+        document.write("bills : "+John.Bills+"<br>");
+        document.write("Amount : "+FinalBill+"<br>");
+    </script>
+</body>
+</html>

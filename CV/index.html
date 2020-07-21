@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/headerstyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Amarjit CV</title>
+</head>
+<body>
+    <header>
+    <section class="header">
+        <!-- API for the weather -->
+        <i class="fas fa-cloud fa-1x cloud"></i>
+        <span id="temp">temp</span>
+        <span id="city">city</span>
+        <span id="windSpeed">Windspeed</span>
+        <!-- API weather section is closed -->
+    </section>
+        <label class="switch">
+            <!-- <label for="mode">Mode : </label> -->
+            <input type="checkbox" class="moon" id="theme" hidden>
+            <i class="fas fa-moon fa-1x" id="nightMode"></i>
+        </label>
+    </header>
+    <nav>
+        <section class="logoSection" >
+            <img id="logoimg" src="assets/favicon.png" alt="logo">
+            <h3>Amarjit</h3>
+        </section>
+        <section class="navSection" >
+            <ul class="nav-List" >
+                <li class="nav-Link droplist"><a href="#">Projects</a>
+                    <ul class="dropdown-List" >
+                        <li class="dropdown-Link"><a href="#">HTML & CSS</a></li>
+                        <li class="dropdown-Link"><a href="#">PHP (Back-end)</a></li>
+                        <li class="dropdown-Link"><a href="#">Javascript</a>
+                            <ul class="nested-dropdown-List">
+                                <li class="nested-dropdown-Link"><a href="../CV/TicTacToe/index.html">Tic-Tac-Toe</a></li>
+                                <li class="nested-dropdown-Link"><a href="../CV/diceGame/index.html">Piggy Bank</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-Link" ><a href="#">Home</a></li>
+                <li class="nav-Link"><a href="#">Contact</a></li>
+            </ul>
+        </section>
+    </nav>
+        
+    <!-- Main body content -->
+    
+    <main>
+        <section class="banner">
+            <div class = "test">
+                <div class="canva"> 
+                    <img src="" alt="image" class="profile">
+                    <h4>hey my name is amar</h4>
+    
+                </div>
+
+            </div>
+            
+        </section>
+
+
+
+
+    </main>
+
+
+    <!-- footer starts -->
+    <script src="script.js"></script>
+    <script src="weatherscript.js"></script>
+</body>
+</html>

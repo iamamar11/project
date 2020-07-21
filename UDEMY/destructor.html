@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            let person = ["Amarjit Singh", 25, 'Male'];
+            const [name, age, gender] = person;
+            console.log(name, age, gender);
+        }
+        {
+            let person1 = {
+             name:  'kiranjot',
+             age:   23,
+             gender: 'Male'
+            };
+            const {name: firstName, age, gender} = person1
+            console.log(firstName, age, gender);
+
+        }
+        {
+            function calc(year){
+                const age = new Date().getFullYear() - year;
+                return {
+                    age:  age,
+                    retirementAge: 65-age
+                }
+            }
+            // let result = calc(1995);
+            // console.log(result);
+            const {age, retirementAge} = calc(1995);
+            console.log(age);
+            console.log(retirementAge);
+        }
+    </script>
+</body>
+</html>

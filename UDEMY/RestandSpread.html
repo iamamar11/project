@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operator</title>
+</head>
+<body>
+    <script>
+        let values = ['Amarjit', 25, 'M'];
+        { //IIFI
+            // the spread Operator take the array and then expand it (function Argument)
+            // it like substuting values instead of the variables
+            function spreadOperator(name, age, gender, extra){
+                console.log(name+' -- '+age+' -- '+gender+ '--' +extra);
+            }
+            spreadOperator(...values);
+        }
+
+        {
+            // the rest parameter is similar to spread operator they are used as function parameter
+            function RestParameter(...args){
+                console.log(args);
+                name = args[0][0];
+                console.log(name);
+            }
+            RestParameter(values);
+        }   
+            // Default Parameter (which are passed as a default value in parameter)
+    </script>
+</body>
+</html>

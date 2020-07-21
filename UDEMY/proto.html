@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototypes</title>
+</head>
+<body>
+    <script>
+        // creating a object by Constructor function
+        function Person(name,year,height,gender){
+            this.name = name;
+            this.year = year;
+            this.height = height;
+            this.gender = gender;
+        };
+        Person.prototype.calculateAge = function(){
+            return 2020 - this.year;
+        }
+        Person.prototype.display = function(){
+            return this.name+' is '+this.calculateAge()+' years old. '+this.height+'cm long and gender is '+this.gender;
+        }
+        
+        // the above function is like a prototye or blueprint how it should look like
+        /** 
+         * ! The prototype chain is like 
+         * ? Person created from constructor of Person object Thus in prototype it has a constructor only
+        */
+
+        // Inheritance from the Person the properties
+        function Athlete(name, year, height,gender){
+            // we need to call the constructor of the student object and pass the arguments
+            Person.call(this,name,year,height,gender);
+            this.medal = "GOLD";
+        };
+        Athlete.prototype = Object.create(Person.prototype);
+        Athlete.prototype.constructor = Athlete;
+        Athlete.prototype.getMedal = function(){
+            return this.medal;
+        }
+        // Inheriting the method of Person Prototypes. here we are creating a prototype chain
+        // Athlete.prototype.constructor = Athlete;     
+        let person1 = new Person("Amarjit",1995,180,'M');
+        let person2 = new Person("Gurtaj",1997,170,'M');
+        let athlete1 = new Athlete("kiranjot",1997,160,'F');
+        // last inheritance through constructor function
+        function Footballer(...args){
+            Athlete.apply(this,args);
+        }
+
+        // creatind a chain by linking the prototype of the football to the  Athlete prototype
+        // through Object.create method
+        Footballer.prototype = Object.create(Athlete.prototype);
+        Footballer.prototype.constructor = Footballer;
+        
+        let footballer1 = new Footballer("Ronaldo",1985,187,'M');
+        let footballer2 = Object.create(Athlete.prototype,{
+            name: {value: "RONALDO"},
+            age: {value: 1985},
+            medal: {value: "GOLDEN BALL"}
+        });
+        
+    </script>
+</body>
+</html>

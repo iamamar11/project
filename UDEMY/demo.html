@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var calculator={
+            bills: [124,48,268,180,42],
+            tipCalculator:function(){
+
+                this.finalPaid=[];
+                this.tip=[];
+                for(var i=0; i<this.bills.length; i++){
+                    var percentage;
+                    if(this.bills[i] <= 50){
+                        percentage = 0.2;
+                    }else if(this.bills[i] >50 && this.bills[i]<=200){
+                        percentage = 0.15;
+                    }else if(this.bills[i]>200){
+                        percentage = 0.1;
+                    }
+                    // calculating tip and storing in tip Array
+                    tipAmount = (this.bills[i]* percentage);
+                    this.tip.push(tipAmount);
+                    // calculating bill 
+                    finalBill = parseFloat(this.bills[i]) + parseFloat(tipAmount);
+                    this.finalPaid.push(finalBill);
+                    
+                }
+            }
+        }
+    calculator.tipCalculator();
+    console.log(calculator.tip);
+    console.log(calculator.finalPaid);
+    console.log("===========================");
+    
+    </script>
+</body>
+</html>

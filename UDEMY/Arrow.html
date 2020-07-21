@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = "amarjit singh"
+        let age = 23;
+
+        let obj = {
+            name: "amarjit Singh",
+            age: 25,
+            gender: "MALE",
+
+            // here this object contain a method, so the this point to the owner of the method that is the object 
+            // and this is why the this displays the name, age and gender.
+            display: function(){
+                let self = this;
+                console.log(this.name, this.age, this.gender);
+                // here we are making a regular function call that is why the this is attach to the window obj instead of the function object.
+                function normalfunction(){
+                    console.log(self.name);
+                }
+                normalfunction();
+
+                // here we are using the  arrrow function so the this is set to the lexial environment which is within the obj itself;
+                arrow = () =>
+                console.log(this.age);
+                arrow();
+            }
+        }
+        obj.display();
+    </script>
+</body>
+</html>

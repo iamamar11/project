@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let person = {
+            name: "Amarjit Singh",
+            birthyear : 1995,
+            age : function(){
+                console.log(2020 - this.birthyear);
+            }
+        }
+        person.age();
+        
+        let person1 = {
+            name : "Kiranjot Kaur",
+            birthyear : 1997,
+        }
+        person1.age = person.age;
+        person1.age();
+        
+        // // function to get age
+        // Getage = (year) =>{
+        //     return 2020 - year
+        // }
+
+        // // 1st way to create object
+        // let person1 = {
+        //     name: "Kiranjot",
+        //     year: 1997,
+        //     address : function(){
+        //         let city = "ludhiana";
+        //         let pincode = 146001;
+        //         function display(){
+        //             console.log(city+ " "+ pincode);
+        //         }
+        //         display()
+        //         return city;
+        //     }
+        // }
+        
+        // person1.age = Getage(person1.year);
+        // console.log(person1);
+        // console.log(person1.address());
+        // // console.log(person1.address.display);
+
+        // // 2nd way to create object
+        // let person = new Object();
+        // person.name = "Amarjit";
+        // person.year = 1995;
+        // person.age = Getage(person.year);
+        // person.address = person1.address();
+        // console.log(person); 
+
+    </script>
+</body>
+</html>

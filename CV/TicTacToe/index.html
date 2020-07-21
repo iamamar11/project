@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <main>
+    <section class="gameArea">
+        <h1 class="title">Tic Tac Toe</h1>
+
+        <!-- ? score card -->
+        <section class="scoreBoard">
+            <article class="scorecard">
+                <h4 class="score active" id="playero"></h4>
+                <p class="scores"id="playerOscore"></p>
+            </article>
+            <article class="scorecard">
+                <h4 class="score" id="playerx"></h4>
+                <p class="scores" id="playerXscore"></p>
+            </article>
+        </section>
+
+        <!-- ? playing Area -->
+        <p id="status"></p>
+        <div class="container">
+            <button class="box" id="box1" onclick="getID(this)"></button>
+            <button class="box" id="box2" onclick="getID(this)"></button>
+            <button class="box" id="box3" onclick="getID(this)"></button>
+            <button class="box" id="box4" onclick="getID(this)"></button>
+            <button class="box" id="box5" onclick="getID(this)"></button>
+            <button class="box" id="box6" onclick="getID(this)"></button>
+            <button class="box" id="box7" onclick="getID(this)"></button>
+            <button class="box" id="box8" onclick="getID(this)"></button>
+            <button class="box" id="box9" onclick="getID(this)"></button>
+        </div>
+
+        <!-- ? resset Button -->
+        <button class="restart" onclick="restartGame()">NEW GAME</button>
+
+    </section>    
+    <script src="script.js"></script>
+</main>
+</body>
+</html>

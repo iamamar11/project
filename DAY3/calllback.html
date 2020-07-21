@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        var i = 0, result = '';
+        let laugh = function(number){
+            while(i < number){
+                result += "ha";
+                i++;
+            }
+            return result+'!';
+        }
+                /**
+         * !need explianation one more time
+         * */
+        function emotion(state, passLaughFunction){
+            console.log("I am feeling"+state+" "+laugh(5));
+        }
+        emotion("Happy",laugh);
+
+        
+        // var favoriteMovie = function display(moviename){
+        //     console.log("My favorite Movie is : "+moviename);
+        // }
+        // function movie(functionpass, moviename){
+        //     functionpass(moviename);
+        // }
+        // movie(favoriteMovie, "A-TEAM");
+
+
+        //     square = (x) => {
+        //         return x * x;
+        //     }
+        //     subtractFour = (x) => {
+        //         return square(x) - 4;
+        //     } 
+        //     console.log(square(5));
+        //     console.log(subtractFour(5));
+
+        // ! function exp
+        // display();
+        // let display = function (){
+        //     console.log("WORKS");
+        // }
+        // console.log(a);
+        // var a = 10;
+        // console.log(a);
+            
+            // var a = 1; //global
+            // function dis(){
+            //     var b = 10; //functional for dis
+            //     console.log("dis "+b);
+            //     console.log("dis "+c); //undefined
+            //     function diss(){
+            //         var c = 20;
+            //         console.log("diss "+c);
+            //         console.log("diss "+b);
+            //     }
+            //     diss();
+            // }
+            // dis();
+
+            // function Missing(value){
+            // for(var j = 1; j <= i; j++){
+            //         document.write(" * ");
+            //     }
+            // }
+            
+            // function makeLine(length){
+                
+            //     for(var i = 1; i <= length; i++){
+            //         BuildTraingle(i);
+            //         document.write("<br>");
+            //     }
+            // }
+            // function BuildTraingle(value){
+            //     for(var j = 1; j <= value; j++){
+            //         document.write(" * ");
+            //     }
+            // }
+            // makeLine(10);
+
+
+
+    </script>
+</body>
+</html>

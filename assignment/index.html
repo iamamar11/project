@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>order Books online</h1>
+        <div>
+            <section id="row">
+                <h4>Book</h4>
+                <h4>Quantity</h4>
+                <h4>Price</h4>
+            </section>
+
+            <section id="row">
+                <p>Basic XHTML</p>
+                <input type="number" id="quantity1">
+                <p>$19.99</p>
+            </section>
+            
+            <section id="row">
+                <p>Intro to PHP</p>
+                <input type="number" id="quantity2">
+                <p>$86.00</p>
+            </section>
+
+            <section id="row">
+                <p>Advanced JQuery</p>
+                <input type="number" id="quantity3">
+                <p>$55.00</p>
+            </section>
+        </div>
+
+        <button type="submit" id="order">Place Order</button>
+        
+        <div id="result">
+        <section class="resultRow">
+                <h4 id="html"></h4>
+                <p id="htmlprice"></p>
+        </section> 
+        <section class="resultRow">
+            <h4 id="php"></h4>
+            <p id="phpprice"></p>
+        </section> 
+        <section class="resultRow">
+            <h4 id="Jquery"></h4>
+            <p id="Jqueryprice"></p>
+        </section> 
+
+        <h4 id="total"></h4>
+        </div>
+
+    </main>
+    <script src="script1.js"></script>
+</body>
+</html>

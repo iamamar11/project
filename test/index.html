@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// var x = 3;
+
+// var foo = {
+//     x: 2,
+//     baz: {
+//         x: 1,
+//         bar: function() {
+//             return this.x;
+//         }
+//     }
+// }
+
+function bar() {
+    return foo;
+    foo = 10;
+    function foo() {}
+    var foo = '11';
+}
+alert(typeof bar());
+var go = foo.baz.bar;
+
+alert(go());
+alert(foo.baz.bar());
+//
+console.log("1" - -"1");
+//
+var foo = function foo() {
+    console.log(foo === foo);  
+};
+foo();
+// alert(typeof aaa);
+
+// var x = "The axis at 23.5"
+// 	var y = 0;
+// 	findTheX(x);
+
+// 	function findTheX(the_text) {
+//         y=the_text.indexOf("x");
+        
+//     }
+    
+
+    </script>
+</body>
+</html>

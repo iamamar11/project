@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        document.write("First :" + (2+10-19+4-90+1)+"<br>");
+        document.write("Second :" + (-20 + (-19) - (-10) - (-1) + 24) + "<br>");
+        document.write("Third :" + ((10/5)*4-20) + "<br>");
+        document.write("Fourth :" + (4069%15) + "<br>");
+        document.write("---------------------------------------------  <br>")
+        document.write("logical operators <br>")
+        document.write("First :" + (43>47) + "<br>");
+        document.write("Second :" + (12 == 17) + "<br>");
+        document.write("Third :" + (3<=13) + "<br>");
+        document.write("Fourth :" + (1!=0) + "<br>");
+        document.write("---------------------------------------------  <br>")
+        document.write("100-20+4-42 = " + (100-20+4-42) + "<br>");
+        document.write("142 % 100 =" + (142 % 100) + "<br>");
+        document.write("20 + 32 - 10 * 100 / 100 =" + (20 + 32 - 10 * 100 / 100) + "<br>");
+        document.write("---------------------------------------------  <br>")
+        document.write("Hello " + "World" + "<br>");
+        document.write("Hello + 5*10" + "<br>");
+        document.write("Hello" + 5*10 + "<br>");
+        document.write("Hello" + "5*10" + "<br>");
+        document.write("Hello" % 10 + "<br>");
+
+        // document.write("---------------------------------------------  <br>")
+        // function convertTemperature(celsius){
+        //     var fahrenheit = (celsius *1.8) + 32;
+        //     document.write("<b>Temperature in Fahrenheit is : <b>" + fahrenheit+ "<br>");
+        // }
+        // celsius = prompt("Enter the temperature in celsius");
+        // convertTemperature(celsius);
+        document.write("---------------------------------------------  <br>")
+
+        var quote = "stay awhile and listen!";
+        document.write(quote[6]+"<br>");
+        document.write("---------------------------------------------  <br>")
+
+        // var string = "You need to study for this course if you want to pass";
+        document.write("<b>Pargol said :</b> \n\t\"You need to study for this course if you want to pass\"");
+        console.log("Pargol said : \n\t\"You need to study for this course if you want to pass\"");
+
+        document.write("<br>---------------------------------------------  <br>")
+        function calculate(bill){
+            let tip = (15/100)*bill;
+            let total = bill+tip;
+            document.write("<b>Bill :</b> $"+bill+"<br>");
+            document.write("<b>Tip :</b> $"+tip+"<br>");
+            document.write("<b>Total :</b> $"+total);
+            
+            // For console value
+            console.log(total);
+        }
+        calculate(10.25+3.99+7.15);
+        document.write("<br>---------------------------------------------  <br>")
+        </script>
+</body>
+</html>

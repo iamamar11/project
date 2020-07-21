@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // //  object is just like associate array in php
+        // let john = {
+        //     // all these are properties
+        //     firstName: 'John',
+        //     lastName: 'Snow',
+        //     isMarried: false,
+        //     family: ['jane','marks','bob'],
+        //     job: 'Coder',
+        //     birthyear : 1990,
+        //     calcAge: function(){
+        //         return 2020 - this.birthyear;
+        //     }
+
+        // };
+        // document.write(john.firstName);
+        // document.write(john['lastName']);
+        // document.write(john.calcAge());
+        // console.log(john);
+
+        // var jane = new Object();
+        // jane.name = 'Jane';
+        // jane.birthyear = 1990;
+        // jane.age = 30;
+        // jane.isMarried = true;
+        // console.log(jane);
+        function calBMI(W,H){
+            console.log(W);
+            return W/(H**2);
+        }
+        let Mark = {
+            Name: 'Marks',
+            weight: 80,
+            height: 1.70,
+            display(height){
+                console.log(this.weight, height);
+            },
+            sayHi(){
+                console.log("hello "+this.Name);
+            }
+        };
+        setTimeout(Mark.sayHi,1000);
+        console.log(Mark);
+        Mark.display(Mark.height);
+        setTimeout(Mark.display(Mark.height),1000);
+        // console.log(Mark.bmi = calBMI(Mark.weight,Mark.height));
+        // document.write(Mark.bmi = calBMI(Mark.weight,Mark.height));
+
+        // let John = {
+        //     Name: 'John',
+        //     weight: 90,
+        //     height: 1.85,
+        //     bmi: calBMI(90,1.85)
+        //     // BMI: () => {
+        //     //    return John.bmi = John.weight/(John.height**2);
+        //     // }
+        // };
+        // console.table(John);
+        // // document.write(John.BMI()+"<br>");
+        // document.write(John.bmi+"<br>");
+
+        // let result = Mark.bmi > John.bmi ? "Mark's bmi is greater than John " :
+        // Mark.bmi < John.bmi ? "John's bmi is greater than Mark " : "both are same";
+        // console.log(result);
+        
+
+    </script>
+</body>
+</html>

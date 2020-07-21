@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display object in JS</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name : "Amarjit Singh",
+            birthyear : 1995,
+            gender : "Male"
+        };
+        // document.write(person); //display [object Object]
+        console.log(person);
+
+        /**
+        * ! 4 ways to display object on console
+        */
+        // accessing all the object by displaying object property 
+        document.write(person.name+" "+person.birthyear+" "+person.gender+"<br>");
+        
+        // looping through all the elements of the object
+        /**
+        * ! Object.enteries give arraay (associate Array)
+        * ! Other functions are Object.Keys and Object.values
+        */
+        let objectEnteries = "";
+        for(let [key,value] of Object.entries(person)){
+            objectEnteries += value;
+        }
+
+        document.write("this is display by using the loop "+objectEnteries+"<br>");
+        
+        //  this Object.entries return an Array 
+        let Array = Object.entries(person);
+        console.log(Array);         
+        Array.forEach((element,index) => {
+         console.log(element+" ");   
+        });
+                /**
+        * ! JSON data uses Stringify method
+        * ! JSON does not stringify function,, to do convert the whole object into string and then display JSON data
+        */
+       var JsonData = JSON.stringify(person);
+       document.write("this is display by using the stringify methiod "+JsonData+"<br>");
+
+       let laptop = {
+           name : "DELL",
+           cpu : "i7",
+        //    get config(){
+        //        return this.name+" "+this.cpu;
+        //    }
+           turnOn : function(){
+               console.log("Laptop is booting Up");
+        }
+       }
+       laptop.turnOn = laptop.turnOn.toString();
+       let myJson = JSON.stringify(laptop);
+       document.write("Cheching if JSON display the method "+myJson);
+    //    console.log(laptop);
+        
+    </script>
+</body>
+</html>

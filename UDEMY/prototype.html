@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_Proto_</title>
+</head>
+<body>
+    <script>
+        // function constructor in javascript is like a blue print.. class like is c++
+        function Person(name,birthyear,gender){
+            this.name = name;
+            this.birthyear = birthyear;
+            this.gender = gender;
+        };
+
+        /**
+        * ! first way of creating object constructor.
+        */
+        // ========================================================================//
+        // Adding method to Person constructor's protype which will be used by the other objects
+        // prototype is the way of attaching common methods and properties to the object created from same constructor
+       
+        Person.prototype.species = 'Human';
+
+        Person.prototype.calculateAge = function(){
+            // console.log(2020 - this.birthyear);
+            return 2020 - this.birthyear;
+        },
+
+        Person.prototype.display = function(){
+            return this.name+" is "+this.calculateAge()+" years old "+" belongs to "+this.species;
+            
+        }
+        // ========================================================================//
+
+        // new => create a brand new empty object and call the function and init the values to the variables
+        let person1 = new Person("john",1995,"M");
+        let person2 = new Person("bob",1997,"F"); 
+        // console.log(person1);
+        // console.log(person2);
+
+        // console.log(person1.hasOwnProperty('name')); 
+        // person1.calculateAge();
+        // person2.calculateAge();
+
+        /**
+         * ! second way of creating object constructor.
+         */
+        
+        // Object.create method
+        let personProto = {
+            calculateAge : function() {
+                return(2020- this.birthYear);
+            },
+            display: function(){
+                return this.name+"\'s age is "+this.calculateAge();
+            },
+            species: "Humans"
+        };
+
+        //! not the right way because object is created empty and later o we need to fill in the values
+        var john = Object.create(personProto);
+        john.name = "amar";
+        john.birthYear = 1995;
+        john.gender = 'M';
+        // better way to create object in one go
+        // jane.prototype.constructor = personProto;
+        var jane = Object.create(personProto,{
+            name: {value: 'jane'},
+            birthYear: {value: 1990}
+        });
+        var kiran = Object.create(Person.prototype,{
+            name: {value:'kiran'},
+            birthYear:{value: 1997}     
+        });
+        
+
+    </script>
+</body>
+</html>

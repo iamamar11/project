@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+        #movie{
+            height: 400px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h4 id="heading"></h4>
+    <div id="movie"></div>
+    <script>
+        let heading = document.querySelector('#heading');
+        let clip = document.querySelector('#movie');
+
+        // Now we will make a call to the API to get the results
+        // async function getWeather(){
+        //     let response = await fetch(Api);
+        //     let data = await response.json();
+        //     // console.log(data);
+        //     return data;
+        // }
+        // getWeather().then(value => console.log(value.name));
+        
+        
+        fetch("https://free-football-soccer-videos1.p.rapidapi.com/v1/", {
+	        "method": "GET",
+	        "headers": {
+		    "x-rapidapi-host": "free-football-soccer-videos1.p.rapidapi.com",
+		    "x-rapidapi-key": "300a0f5452mshf8ddca84cc156ebp119c37jsnfe88d535c807"
+	        }
+        }).then(response => {
+            return response.json();
+        }).then((data) => {
+        console.log(data[1]);
+        heading.textContent = data[1].title;
+        clip.innerHTML = data[1].embed;
+        });
+    </script>
+</body>
+</html>

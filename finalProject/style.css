@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body::before{
+    content: "";
+    background-image: url(../finalProject/images/bg.jpg);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+    filter: blur(2px);
+}
+.gameArea{
+    padding-top: 50px;
+    height: 100vh;
+    text-align: center;
+    z-index: 10;
+}
+
+.title{
+    font-size: 30px;
+    color: lightgreen;
+    z-index: 20;
+    font-family: 'Piedra', cursive;
+    letter-spacing: 3px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 50px auto;
+    z-index: 20;
+    position: relative;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 5px 5px lightgreen;
+    border: 2px solid white;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
+    background-color: black;
+    color: white;
+}
+.boxClicked{
+    background-color: lightgreen;
+}
+.box:hover{
+    transform: scale(1.02);
+}
+.restart{
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: lightgreen;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+}
+.restart:hover{
+    transform: scale(1.01);
+    /* border: 2px solid lightgreen; */
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0 0 3px 3px lightgreen;
+    transition: .7s ease;
+    outline: none;
+}
+#status{
+    color: white;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 14px 10px;
+    border: 1px solid greenyellow;
+    width: 50%;
+    box-shadow: 0 0 4px 2px lightgreen;
+    display: none;
+}
+.scoreBoard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 15%;
+    margin: 25px auto;
+}
+.scorecard{
+    background-color: transparent;
+    width: 85%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 0 4px 2px lightgreen;
+}
+.score{
+    /* background-color: pink; */
+    color: white;
+    border-bottom: 1px solid white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.scores{
+    color: white;
+}

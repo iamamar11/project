@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function Return function</title>
+</head>
+<body>
+    <script>
+        // using the functin return function and IIFI (immediately invoking function Implementation)
+        // function Data(num1){
+        //     return function(){
+        //         console.log(num1 + 100);
+        //     }
+        // }
+        // Data(100)();
+        
+        function retirement(retirementAge){
+            // now we will call another function to check the year left for the retirement
+            const stringValue = " Year are left for the retirement."
+            // because of scope chain we can access the variables of the outer function even after its not present in the exectuion stack.
+            return function(Year){
+                let age = 2020 - Year;
+                console.log((retirementAge - age) + stringValue); 
+            }
+        }
+        retirement(66)(1995);
+        retirement(60)(1995);
+
+        // Closeure always return only one funciton with different condition in it!
+        function Question(job){
+            return function(name){
+                if(job === "coder"){
+                    console.log(name+ " you do coding");
+                }else if(job === "developer"){
+                    console.log(name+ ", you are a developer");
+                }else{
+                    console.log(name+ ", sorry i don't know what you do!");
+                }
+            }
+        }
+        Question("developer")("Amarjit");
+
+        calculator = (number1, number2) => {
+             return doMath = (Operation) => {
+                // console.log(number1 , number2 , Operation);
+                switch(Operation){
+                    case "sum": console.log(parseFloat(number1) + parseFloat(number2));
+                    break;
+                    case "subtract": console.log(parseFloat(number1) - parseFloat(number2));
+                    break;
+                    case "multiply": console.log(parseFloat(number1) * parseFloat(number2));
+                    break;
+                    case "divide": console.log(parseFloat(number1) / parseFloat(number2));
+                    break;
+                };
+             };
+        };
+        calculator(400,60)("sum");
+        calculator(400,60)("subtract");
+        calculator(400,60)("multiply");
+        calculator(400,60)("divide");
+
+        function demo(a){
+            function display(){
+                console.log("outer function ends here");
+            }
+            return function test(b){
+                console.log("sum of a and b is :"+(a+b));
+                display();
+            }
+        }
+        demo(5)(10);
+
+
+        
+
+
+    </script>
+</body>
+</html>

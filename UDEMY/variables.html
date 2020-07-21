@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    <script>
+        // var firstname = "Amarjit";
+        // var lastname = "Singh";
+        // let age = 24;
+        // document.write(typeof(age));
+
+        /* below is example of type coercion 
+        where the type of age is converted into string
+        when the concatination is done.*/
+        // document.write(" "+firstname+" "+lastname+ " "+age);
+        // document.write(typeof(" "+firstname+" "+lastname+ " "+age));
+
+
+        // /*Variable mutation means change the value of variable*/
+        // age = "Twenty Four";
+        // document.write(" "+firstname+" "+lastname+ " "+age);
+        let MarkMass = prompt("Enter Marks's Mass");
+        let MarkHeight = prompt("Enter Marks's Height");
+        let JohnMass = prompt("Enter John's Mass");
+        let JohnHeight = prompt("Enter John's Height");
+        
+        
+        function calculate(Mass, Height){
+            let BMI = (Mass/(Height*Height));
+            return BMI;
+        }
+        let MarksBMI = calculate(MarkMass,MarkHeight);
+        let JohnBMI = calculate(JohnMass,JohnHeight);
+        
+        document.writeln("Mark's BMI is : "+MarksBMI);
+        document.writeln("john's BMI is : " +JohnBMI);
+
+        let bool = MarksBMI > JohnBMI;
+
+        document.writeln("Is Marks's BMI higher than John's?"+bool);
+
+
+
+    </script>
+</body>
+</html>

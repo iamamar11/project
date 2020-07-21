@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        // Producing all the promises and an object
+        const getIDs = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([523,883,432,974]);
+            },1000);
+        });
+        const getRecepie = recID => {
+            return new Promise((resolve, reject) => {
+                    setTimeout(ID =>{
+                    const recepie = {title: "Fresh Pizza", publisher: "Amarjit"};
+                    resolve(recepie);
+                },2000, recID)
+            });
+        };
+        const getRelated = publisher => {
+            return new Promise((resolve, reject)=>{
+                setTimeout((pub)=>{
+                    const recepie = {title: 'Pasta', publisher : "Amarjit"};
+                    resolve(`${pub}:  ${recepie.title}`);
+                },2000, publisher);
+            });
+        };
+
+        // Consuming all the promises in normal way
+        // getIDs
+        // .then(value => {
+        //     console.log(value);
+        //     return getRecepie(value[2]);
+        // })
+        // .then(recepie =>{
+        //     console.log(recepie);
+        //     return getRelated(recepie.publisher);
+        // })
+        // .then(result => {
+        //     console.log(result);
+        // })
+        // .catch(error => {
+        //     console.log("This is an Error msg "+error);
+        // });
+
+        // Async and Await
+        // This async funciton keeps on running in backgroud and return a promise.
+        async function getRecepiesAW(){
+            const IDs = await getIDs;
+            console.log(IDs); 
+            const recepie = await getRecepie(IDs[2]);
+            console.log(recepie);
+            const pub = await getRelated(recepie.publisher);
+            console.log(pub);
+        }
+        getRecepiesAW();
+    </script>
+</body>
+</html>

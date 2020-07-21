@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        const question = new Map();
+        question.set('question','To Which country I belong to?');
+        question.set(1,'India');
+        question.set(2,'USA');
+        question.set(3,'England');
+        question.set(4, 'Canada');
+        question.set('correct', 1);
+        question.set(true, 'Correct Answer');
+        question.set(false, 'Try Again');
+        console.log(question.get('question'));
+        question.forEach((element, key) => {
+            if(typeof(key) === 'number'){
+                console.log(`${key} : ${element}`)
+            }
+        });
+        const Answer = parseInt(prompt("Answer of your choice [Number]")); 
+        console.log(question.get(Answer === question.get('correct')));
+        console.log(question);
+    </script>
+</body>
+</html>

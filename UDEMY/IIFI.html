@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFI</title>
+</head>
+<body>
+    <script>
+        let person = (function(){
+            let FirstName = "Amarjit";
+            let lastName = "Singh";
+            let age = 24;
+            display = function(){
+                console.log(FirstName, lastName, age);
+            }
+            return {
+                show : function(){
+                    display();
+                }
+            }
+        })();
+        
+        /**
+         * *IIFI is like a private access method. A
+         * *Any variable and method cannot be accessed directly until and unless the IIFI does not return anything.
+        */
+
+    </script>
+</body>
+</html>

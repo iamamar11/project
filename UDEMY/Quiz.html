@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+</head>
+<body>
+    <script>
+        function Question(question, answers, correct) {
+            this.question = question;
+            this.answers = answers;
+            this.correct = correct;
+        };
+        // Function Prototype
+        Question.prototype.display = function(){
+            console.log(this.question);
+
+            this.answers.forEach((element,index) => {
+                console.log(index+" : "+element);
+            });
+        }
+        Question.prototype.check = function(user){
+            if(user === this.correct){
+                console.log("CORRECT");
+            }else{
+                console.log("Incorrect");
+            }
+        }
+
+        let question1 = new Question("What is my name?",["Amarjit", "Kiran", "Gurtaj"],0);
+        let question2 = new Question("which language do I study",["php","JS"],1);
+
+        let questions = [question1,question2];
+        let random = parseInt(Math.random()* (questions.length));
+        questions[random].display();
+
+        let userAnswer = parseInt(prompt("Your Answer"));
+        console.log(userAnswer);
+        questions[random].check(userAnswer);
+
+    </script>
+</body>
+</html>
