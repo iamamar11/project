@@ -6,8 +6,13 @@
     <title>Rest and Spread Operator</title>
 </head>
 <body>
+    <button
+    class="buttonAction">Rest Parameter</button>
+    <br>
+    <br>
+    <button class="buttonAction1">Spread Operator (spread Argument)</button>
     <script>
-        let values = ['Amarjit', 25, 'M'];
+        let values = ['Amarjit', 25, 'Male'];
         { //IIFI
             // the spread Operator take the array and then expand it (function Argument)
             // it like substuting values instead of the variables
@@ -17,16 +22,42 @@
             spreadOperator(...values);
         }
 
+        let displayValue = {
+            name : "Amarjit",
+            age : 25 
+        };
         {
             // the rest parameter is similar to spread operator they are used as function parameter
-            function RestParameter(...args){
-                console.log(args);
-                name = args[0][0];
+            function RestParameter(...values){
+                console.log(values);
+                name = values[0].name;
                 console.log(name);
             }
-            RestParameter(values);
+            RestParameter(displayValue);
         }   
             // Default Parameter (which are passed as a default value in parameter)
+
+            // event listner for the button
+            const button = document.querySelector(".buttonAction");
+            button.addEventListener('click', calledFunction);            
+            // using rest parameter for this function
+            function calledFunction(){
+                checkRestParameter(displayValue)
+            }
+            function checkRestParameter(...args){
+                console.log(args[0]);
+            }
+
+            const button1 = document.querySelector(".buttonAction1");
+            button1.addEventListener('click', SpreadCall);
+
+            function SpreadCall(){
+                checkSpreadCall(...values);
+            }
+
+            function checkSpreadCall(name, age, gender){
+                console.log("Hello my name is "+name+". I'm "+age+" years old and i am "+gender);
+            }
     </script>
 </body>
 </html>
