@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise</title>
+</head>
+<body>
+    <h1 class="headers">hello There</h1>
+    <h2 class="headers">this is a test</h2>
+    <h3 class="headers">To check map function</h3>
+    <h4 class="headers">which we use instead of slice function</h4>
+    <script>
+
+        // function to convert NodeList to Arrays
+        function ConvertListToArray(){
+            let checkmap = document.querySelectorAll('.headers');
+            console.log(checkmap); // This will return the list of nodes
+            return function Conversion(){
+                // 1. way using the slice function
+                let arr = Array.prototype.slice.call(checkmap);
+                console.log(arr);
+
+                // 2. way to convert nodelist to array is using map Function
+                let Arr = Array.from(checkmap);
+                console.log(Arr);
+            }
+        }
+        ConvertListToArray()();
+    </script>
+</body>
+</html>

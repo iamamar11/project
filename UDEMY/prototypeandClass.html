@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES5 - uses function constructor
+        // let Person = function(name, yearofBirth, gender){
+        //     this.name;
+        //     this.yearofBirth = yearofBirth;
+        //     this.gender = gender;
+        // }
+        // Person.prototype.display = function(){
+        //     console.log(this.name, this.yearofBirth, this.gender);
+        // }
+        // let person1 = new Person("Amarjit", 1995, "MALE");
+        // console.log(person1);
+
+        // let Athlete = function(...args){
+        //     Person.apply(this,args);
+        // }
+        // Athlete.prototype = Object.create(Person.prototype);
+        // Athlete.prototype.constructor = Athlete;
+        // Athlete.prototype.nameDisplay = function(){
+        //     console.log(this.name);
+        // }
+        // let athlete1 = new Athlete("Kiran", 1997, "FEMALE");
+        // console.log(athlete1);
+
+        class Person{
+            constructor(name, age, gender){
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+            }
+            display(){
+                console.log(this.name, this.age, this.gender);
+            }
+        }
+        let person = new Person("Amarjit",25,"male");
+        console.log(person);
+        
+        class Athlete extends Person{
+            constructor(name,age,gender,medal){
+                super(name, age, gender);
+                this.medal = medal
+            }
+            displayMedal(){
+                console.log(this.medal);
+            }
+        }
+        let athlete = new Athlete("Kiran", 23, "Gender", "GOLD");
+        console.log(athlete);
+
+        function display(setthis){
+            console.log(`This code will execute while run time as it is in public section ${setthis.name}`);
+        }
+        display(person);
+    </script>
+</body>
+</html>
