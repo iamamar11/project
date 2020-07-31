@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .d{
+            height: 10vh;
+            background-color: pink;
+        }
+
+        .s{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <main class="m">
+        <div class="d">
+            <p class="p">
+                <span class="s">
+                    hey there
+                </span>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        let m= document.querySelector('.m')
+        let d= document.querySelector('.d')
+        let p= document.querySelector('.p')
+        let s= document.querySelector('.s')
+
+        // Through this event bubbling will happen
+        m.addEventListener('click',(event) =>{
+            console.log(event.currentTarget)
+        });
+
+        d.addEventListener('click',(event) =>{
+            d.style.background = 'RED';
+            console.log(event.currentTarget)
+        });
+
+        p.addEventListener('click',(event) =>{
+            console.log(event.currentTarget)
+            s.removeEventListener('click', show, false);
+            event.stopPropagation();
+        });
+
+        // s.addEventListener('click',function show(){
+            //     console.log(event.currentTarget)
+            //     event.stopPropagation(); // This is used to prevent bubbling up 
+            // });
+            
+            function show(event){
+                console.log(event.currentTarget.innerHTML = "HEY");
+                // event.stopPropagation(); // This is used to prevent bubbling up 
+            }
+            s.addEventListener('click',show, false);
+    </script>
+</body>
+</html>
